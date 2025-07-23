@@ -1,24 +1,54 @@
-## 📌 Approach
-- Built album/photo CRUD using SvelteKit routes and API endpoints
-- Used Bun runtime and PostgreSQL for backend
-- Implemented base64 image upload via form
-- Created mock login system for demo purposes
+# 📸 FullStack SvelteKit Assessment – Photo Album App
 
-## ⚠️ Assumptions
-- Mock login: accepts any non-empty username/password
-- Images stored as base64 strings in the database
-- No user-specific album filtering (as per instructions)
+This is my submission for the Stewart Brothers technical assessment using SvelteKit, Bun, and PostgreSQL.
 
-## 🚧 Challenges
-- Learning curve with SvelteKit file-based routing
-- Bubble’s limited image upload required base64 workaround
-- Handling relational data (album/photos) in a clean UI
+---
 
-## ✅ Features
-- Create, edit, delete albums
-- Upload and delete photos per album
-- View all albums
-- Simple login/logout system
+## 💡 Approach
+
+- I structured the application using SvelteKit with file-based routing.
+- I used Bun as the runtime for its speed and modern toolchain.
+- PostgreSQL is used for storing albums and photo metadata.
+- The app allows users to:
+  - Create, view, and delete photo albums.
+  - Upload and view photos per album.
+  - Edit album names.
+  - Perform mock login/logout (no real authentication).
+- Components were designed for simplicity and clarity for a clean user experience.
+
+---
+
+## ⚠️ Deployment Note
+
+The deployed version on Vercel does **not support local PostgreSQL**, so actions that involve database access (like creating albums or uploading photos) **will not work online**.
+
+For full functionality, clone this repo and run locally with PostgreSQL running (e.g., via pgAdmin 4).
+
+---
+
+## 🧩 Challenges
+
+- **Database connection on Vercel**: Since I used a local PostgreSQL instance via pgAdmin 4, Vercel could not connect to it. I solved this by adding a deployment note in this README.
+- **Route parameters in SvelteKit**: I faced minor issues with dynamic routing (`[id]`) but resolved it by checking the correct usage of `params` and endpoint paths.
+- **Image Uploading**: Handling image uploads and storing Base64 or links required creating a consistent schema in the database and ensuring the frontend passed correct content.
+
+---
+
+## 🤔 Assumptions
+
+- No real user authentication was required, so mock login is used (non-empty credentials).
+- File uploads are assumed to be either URLs or Base64 strings (actual file hosting not implemented).
+- Only basic styling and layout were used as the focus was on functionality.
+
+---
+
+## 🛠️ Tech Stack
+
+- SvelteKit
+- Bun
+- PostgreSQL
+- Vercel (for deployment)
+
 
 ==================================================================================================================================================
 # sv
